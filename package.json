@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "main": "src/main.tsx",
   "scripts": {
-    "dev": "concurrently \"npm start\"",
-    "build": "tsc && vite build ",
-    "start": "vite"
+    "dev": "vite",
+    "build": "vite build",
+    "start": "vite preview"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",

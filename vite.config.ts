@@ -8,6 +8,6 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
   build: {
-    outDir: 'dist/react', // Código React compilado vai pra dist/react
+    outDir: 'src', // Código React compilado vai pra dist/react
   },
 });
