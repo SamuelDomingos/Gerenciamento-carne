@@ -82,7 +82,7 @@ export function PrintModal({ bill, isOpen, onClose, onPrint }: PrintModalProps) 
               ← Voltar
             </button>
             
-            <div className="space-y-2">
+            <div className="space-y-2 max-h-[60vh] overflow-y-auto">
               {bill.installments.map((installment) => (
                 <button
                   key={installment.number}

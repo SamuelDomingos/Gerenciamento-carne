@@ -139,7 +139,7 @@ export function EditModal({ bill, isOpen, onClose, onEdit }: EditModalProps) {
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Selecione a parcela para editar
                 </label>
-                <div className="space-y-2">
+                <div className="space-y-2 max-h-[60vh] overflow-y-auto">
                   {bill.installments.map((installment) => (
                     <button
                       key={installment.number}

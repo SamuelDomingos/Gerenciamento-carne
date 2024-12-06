@@ -143,7 +143,7 @@ function App() {
     }
   };
 
-  const handlePayment = (id: string, installmentNumber?: number) => {
+  const handlePayment = (id: string, installmentNumber?: number, paymentDate?: Date) => {
     setBills((prev) => {
       const newBills = prev.map((bill) => {
         if (bill.id === id) {
@@ -151,7 +151,7 @@ function App() {
           if (installmentNumber) {
             const updatedInstallments = bill.installments.map((inst) =>
               inst.number === installmentNumber
-                ? { ...inst, status: "Pago" as const, paymentDate: new Date() }
+                ? { ...inst, status: "Pago" as const, paymentDate: paymentDate || new Date() }
                 : inst
             );
             const allPaid = updatedInstallments.every(
@@ -169,7 +169,7 @@ function App() {
               installments: bill.installments.map((inst) => ({
                 ...inst,
                 status: "Pago" as const,
-                paymentDate: new Date(),
+                paymentDate: paymentDate || new Date(),  // Usando selectedDate ou a data atual
               })),
             };
           }
@@ -182,6 +182,7 @@ function App() {
     });
     toast.success("Pagamento registrado com sucesso!");
   };
+  
 
   const handlePrint = (id: string, installmentNumber?: number) => {
     const bill = bills.find((b) => b.id === id);
