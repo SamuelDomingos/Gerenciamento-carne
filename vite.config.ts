@@ -8,6 +8,7 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
   build: {
-    outDir: 'src', // Código React compilado vai pra dist/react
+    outDir: 'dist', // O build vai pra pasta dist (padrão do Vite)
+    emptyOutDir: true, // Limpa a pasta antes de cada build
   },
 });
